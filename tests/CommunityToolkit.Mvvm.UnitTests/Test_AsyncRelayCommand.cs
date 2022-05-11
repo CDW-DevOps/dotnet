@@ -602,7 +602,7 @@ public class Test_AsyncRelayCommand
         const int delay = 500;
         const string exceptionMessage = "This Exception Is Thrown Inside of the Task";
 
-        Exception? executeException = null;
+        Exception? executeException = null, executeAsyncException = null;
 
         AsyncRelayCommand command = new(async () =>
         {
@@ -624,7 +624,7 @@ public class Test_AsyncRelayCommand
             executeException = e;
         }
 
-        Exception? executeAsyncException = await Assert.ThrowsExceptionAsync<Exception>(() => command.ExecuteAsync(null));
+        executeAsyncException = await Assert.ThrowsExceptionAsync<Exception>(() => command.ExecuteAsync(null));
 
         Assert.AreEqual(exceptionMessage, executeException?.Message);
         Assert.AreEqual(exceptionMessage, executeAsyncException?.Message);
