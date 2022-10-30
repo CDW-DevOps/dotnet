@@ -365,7 +365,7 @@ public abstract class ObservableObject : INotifyPropertyChanged, INotifyProperty
     /// public Task MyTask
     /// {
     ///     get => myTask;
-    ///     private set => SetAndNotifyOnCompletion(ref myTask, value);
+    ///     private set => SetPropertyAndNotifyOnCompletion(ref myTask, value);
     /// }
     /// </code>
     /// </summary>
@@ -434,7 +434,7 @@ public abstract class ObservableObject : INotifyPropertyChanged, INotifyProperty
     /// public Task&lt;int&gt; MyTask
     /// {
     ///     get => myTask;
-    ///     private set => SetAndNotifyOnCompletion(ref myTask, value);
+    ///     private set => SetPropertyAndNotifyOnCompletion(ref myTask, value);
     /// }
     /// </code>
     /// </summary>
