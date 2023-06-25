@@ -14,4 +14,14 @@
   <Import Project="$(_CommunityToolkitMvvmWindowsTargets)" />
   <Import Project="$(_CommunityToolkitMvvmWindowsSdkTargets)" />
 
+  <!-- Automatically set the configuration switches -->
+  <ItemGroup>
+
+    <!-- MVVMTOOLKIT_DISABLE_INOTIFYPROPERTYCHANGING switch -->
+    <RuntimeHostConfigurationOption Condition="'$(MvvmToolkitDisableINotifyPropertyChanging)' != ''"
+                                    Include="MVVMTOOLKIT_DISABLE_INOTIFYPROPERTYCHANGING"
+                                    Value="$(MvvmToolkitDisableINotifyPropertyChanging)"
+                                    Trim="true" />
+  </ItemGroup>
+
 </Project>
